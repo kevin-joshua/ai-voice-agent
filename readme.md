@@ -1,7 +1,3 @@
-Here’s a full-fledged, professional-grade `README.md` for your **AI Voice Agent System** using Vapi, Deepgram, ElevenLabs, and OpenAI — built in Python with FastAPI:
-
----
-
 ```markdown
 # 🎙️ AI Voice Agent System – PoC
 
@@ -27,11 +23,14 @@ A production-ready proof-of-concept AI voice assistant system that supports **in
 - 🧪 Multi-language support (optional)
 - 🚀 Fully modular + extensible backend
 
----
-
-## 📁 Project Structure
 
 ```
+---
+
+```
+## 📁 Project Structure
+
+
 
 ai-voice-agent/
 ├── app/
@@ -48,7 +47,7 @@ ai-voice-agent/
 ├── requirements.txt
 └── README.md
 
-````
+```
 
 ---
 
@@ -149,14 +148,9 @@ When creating a **Private API Key**, set:
 **Allowed Origins Regex**:
 
 ```
-^https:\/\/([a-zA-Z0-9-]+\.)?yourdomain\.com\/?$
+http://*.localhost:8000/
 ```
 
-For dev/testing:
-
-```
-^http:\/\/localhost(:[0-9]+)?$
-```
 
 ---
 
@@ -164,7 +158,7 @@ For dev/testing:
 
 1. User receives an outbound call or calls your assistant.
 2. Audio is streamed to Deepgram → transcript is generated.
-3. Transcript → OpenAI → intent is extracted.
+3. Transcript → Gemini Model → intent is extracted.
 4. Reply text → ElevenLabs → audio URL.
 5. Audio is sent back to the user using Vapi’s `/play` endpoint.
 
@@ -177,33 +171,11 @@ For dev/testing:
 | Voice Infra   | Vapi.ai          |
 | Transcription | Deepgram         |
 | TTS           | ElevenLabs       |
-| NLU / AI      | OpenAI (GPT-4)   |
+| NLU / AI      | Gemini(2.5-flash)|
 | Backend       | FastAPI (Python) |
 | DB            | SQLite/Postgres  |
 | Auth/Config   | dotenv + HTTPS   |
 
----
 
-## ✨ Future Improvements
-
-* ✅ Live agent routing (via queue/ticket)
-* ✅ Language detection & switching (Hindi, Tamil, etc.)
-* ✅ Custom CRM API integrations
-* ✅ Full analytics dashboard
-
----
-
-## 🧑‍💻 Contributing
-
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feat/my-feature`)
-3. Commit your changes
-4. Push and create a PR!
-
----
-
-## 📜 License
-
-MIT © \[Your Name or Organization]
 
 ---
